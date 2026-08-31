@@ -1,0 +1,26 @@
+{
+  "labels": [
+    "Section 147 IPC",
+    "Section 201 IPC",
+    "Section 302 IPC",
+    "Section 376 IPC",
+    "Section 420 IPC",
+    "Section 498A IPC",
+    "Section 506 IPC"
+  ],
+  "threshold": 0.25,
+  "thresholds_per_class": {
+    "Section 147 IPC": 0.3500000000000001,
+    "Section 201 IPC": 0.20000000000000004,
+    "Section 302 IPC": 0.5000000000000001,
+    "Section 376 IPC": 0.5000000000000001,
+    "Section 420 IPC": 0.1,
+    "Section 498A IPC": 0.15000000000000002,
+    "Section 506 IPC": 0.20000000000000004
+  },
+  "best_dev_macro_f1": 0.7591018084252336,
+  "tuned_dev_macro_f1": 0.8036407220864826,
+  "epoch": 10,
+  "trained_on": "train+dev merged (525 cases, no dev holdout)",
+  "thresholds_inherited_from": "/Users/nomitachetia/Desktop/rp/Task 1/work/model_bert"
+}

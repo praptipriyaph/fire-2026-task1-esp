@@ -1,0 +1,37 @@
+# -------- data (PROSLEX + FIRE test set — DO NOT REDISTRIBUTE) --------
+*.jsonl
+!/**/example_*.jsonl        # allow example fixtures if any are ever added
+
+# -------- model weights & checkpoints --------
+work/model_bert/
+work/model_bert_full/
+work/model_bert*_backup/
+*.safetensors
+*.bin
+*.pt
+*.pth
+
+# -------- python --------
+work/.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+
+# -------- logs & scratch --------
+*.log
+work/*.log
+scratch/
+tmp/
+
+# -------- editor / os --------
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# -------- notebooks with outputs --------
+*.ipynb_checkpoints/
