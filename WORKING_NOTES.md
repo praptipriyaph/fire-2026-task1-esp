@@ -2,9 +2,9 @@
 
 **FIRE 2026 — Task 01: Explainable Statute Prediction**
 
-**Author:** *[your name]*
-**Affiliation:** *[your affiliation]*
-**Date:** *[draft — 2026-06-22; final due 2026-08-20]*
+**Author:** *Praptipriya Phukon, Radhika Bohra, Yashwardhan Sharma*
+**Affiliation:** *Birla Institute of Technology and Science*
+**Date:** *[draft — 2 Sept 2026]*
 
 ---
 
