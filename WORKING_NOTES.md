@@ -49,7 +49,7 @@ Mean sections per case is 1.18 (range 1–3); mean number of supporting sentence
 
 ### 2.2 Fact length
 
-Tokenised with the InLegalBERT tokenizer, the mean fact length is 629 tokens (median 466, max 5 060). **46.7 % of training facts and 46.7 % of dev facts exceed the model's 512-token maximum input length**, motivating the chunked-inference strategy described in §3.1.2. About 14 % of facts exceed 1 024 tokens and 3 % exceed 2 048.
+Tokenised with the InLegalBERT tokenizer, the mean fact length is 629 tokens (median 468, max 5 060). **46.2 % of training facts and 46.7 % of dev facts exceed the model's 512-token maximum input length**, motivating the chunked-inference strategy described in §3.1.2. About 14 % of facts exceed 1 024 tokens and 3 % exceed 2 048.
 
 ### 2.3 Schema normalisation
 
@@ -81,7 +81,7 @@ For each predicted section we emit a verbatim sentence from `fact` that triggers
 
 #### 3.2.1 Legal-aware sentence splitter
 
-A punctuation-based regex (`(?<=[.!?])\s+`) misclassifies common legal-writing patterns — abbreviated titles (*"Mr. Singh"*, *"Hon'ble J. Krishna"*), numerical-suffix references (*"accused no. 2"*, *"PW-1"*), code references (*"Sec. 302 read with Sec. 34"*), reporter citations (*"A.I.R. 1957 S.C. 432"*) — as sentence boundaries, fragmenting the candidate-sentence pool and degrading downstream selection. We therefore implement a custom splitter that walks token by token: a token ending in `.!?` is suppressed as a sentence boundary when (i) it equals one of a curated list of 60+ legal abbreviations (titles, code parts, reporter abbreviations, Latin shorthand), (ii) it contains internal dots indicating an inline acronym (e.g. *"A.I.R."*), (iii) it is a single uppercase letter (initial), (iv) the next token starts with a digit or a lowercase letter, or (v) it is a witness identifier matching `(P|D|C)W-?\d+`. The splitter is implemented in `sentence_split.py` and improves the dev strict `exact_fact` match rate from 0.468 to 0.505 in isolation.
+A punctuation-based regex (`(?<=[.!?])\s+`) misclassifies common legal-writing patterns — abbreviated titles (*"Mr. Singh"*, *"Hon'ble J. Krishna"*), numerical-suffix references (*"accused no. 2"*, *"PW-1"*), code references (*"Sec. 302 read with Sec. 34"*), reporter citations (*"A.I.R. 1957 S.C. 432"*) — as sentence boundaries, fragmenting the candidate-sentence pool and degrading downstream selection. We therefore implement a custom splitter that walks token by token: a token ending in `.!?` is suppressed as a sentence boundary when (i) it equals one of a curated list of 55 legal abbreviations (titles, code parts, reporter abbreviations, Latin shorthand), (ii) it contains internal dots indicating an inline acronym (e.g. *"A.I.R."*), (iii) it is a single uppercase letter (initial), (iv) the next token starts with a digit or a lowercase letter, or (v) it is a witness identifier matching `(P|D|C)W[-_]?\d+`. The splitter is implemented in `sentence_split.py` and improves the dev strict `exact_fact` match rate from 0.468 to 0.505 in isolation.
 
 #### 3.2.2 Classifier-based and BM25-hint selectors
 
@@ -151,7 +151,7 @@ Strict `exact_fact` match rate, scored on the subset of predictions where the se
 | Hybrid + legal-aware splitter | 0.505 |
 | **Final pipeline (hybrid + splitter + chunked classifier)** | **0.518** |
 
-Per-section strict match rates under the final pipeline span 0.12 – 0.82, with §498A highest (0.82) and §420 lowest (0.12). The §420 anomaly persists even after sentence-splitter improvements: cheating-case evidentiary sentences are typically *specific* transactional narratives (account numbers, dates, amounts) that share little surface form with the offence keyword "cheating", confusing both the classifier-based selector (which uses the same model that classifies on holistic facts, not transactional detail) and the BM25-hint selector (whose hint vocabulary is offence-generic).
+Per-section strict match rates under the final pipeline span 0.12 – 0.79, with §498A highest (0.79) and §420 lowest (0.12). The §420 anomaly persists even after sentence-splitter improvements: cheating-case evidentiary sentences are typically *specific* transactional narratives (account numbers, dates, amounts) that share little surface form with the offence keyword "cheating", confusing both the classifier-based selector (which uses the same model that classifies on holistic facts, not transactional detail) and the BM25-hint selector (whose hint vocabulary is offence-generic).
 
 ### 4.4 Reasoning quality
 
@@ -193,7 +193,7 @@ i.e. on label-driven metrics alone the system achieves 37.4 of a possible 45 com
 ## 6. Limitations
 
 - **No gold reasoning supervision** in the released training set. All reasoning-quality optimisation is a one-shot exercise against the single published example; we cannot iterate on templates against ROUGE/BLEU because we cannot compute either locally.
-- **Single random dev split** with no cross-validation. With only 8 – 40 cases per class in dev, per-class threshold estimates carry non-trivial variance.
+- **Dev results come from a single random split.** With only 8 – 40 cases per class in dev, per-class threshold estimates carry non-trivial variance. 5-fold cross-validation over all 525 cases (`cv_5fold.py`) was subsequently run and gives Macro F1 = 0.781 ± 0.021 with per-fold tuned thresholds; note that those thresholds are fitted on the fold being evaluated, so that figure is itself an upper bound.
 - **Dev-tuned hyperparameters** — per-class thresholds and the hybrid selector map — fit dev and may not generalise to the test set's section distribution if it differs materially.
 - **Vocabulary mismatch risk for novel sections.** The seven training sections are all from the Indian Penal Code criminal-offences chapter. If the test set introduces unseen sections, the classifier cannot predict them and templates do not exist.
 - **`exact_fact` selection for §420** (cheating) remains poor (0.12 strict match) regardless of selector strategy, attributable to vocabulary mismatch between the offence keyword and the actual transactional evidentiary sentences. No clean fix is implemented.
@@ -203,8 +203,8 @@ i.e. on label-driven metrics alone the system achieves 37.4 of a possible 45 com
 Listed in roughly decreasing expected payoff per unit of effort.
 
 1. **LLM-generated reasoning conditioned on `(fact, section, exact_fact)`.** Once the test set surfaces actual gold reasoning patterns (or FIRE releases additional examples), fine-tuning or few-shot prompting an open-weight LLM (e.g. Llama 3 / 8 B with QLoRA) on `(case, statute, generated-trace)` triples may close the structural-template gap on ROUGE-L and BLEU. This addresses the 55 % of the composite score we currently optimise blindly.
-2. **5-fold cross-validation** for threshold and selector selection, reducing the variance of dev-tuned hyperparameters and producing a more honest estimate of test performance.
-3. **Train on the full 525 cases for the final submission.** Once the configuration is locked, the held-out dev split is no longer needed; retraining on all available data should add roughly 0.01 – 0.02 to Macro F1 for free.
+2. ~~**5-fold cross-validation** for threshold and selector selection.~~ **Done** (`cv_5fold.py`, results in `cv_5fold_results.json`): Macro F1 = 0.781 ± 0.021 (range 0.757 – 0.813), Recall@3 = 0.970 ± 0.008. The per-fold median thresholds are what the final Run 1 submission uses.
+3. ~~**Train on the full 525 cases for the final submission.**~~ **Done** (`train_full.py` → `model_bert_full`, final train loss 0.063). No held-out data remains, so its thresholds are taken from the cross-validation medians rather than tuned on it.
 4. **Auxiliary-offence-aware training.** Oversample cases containing §§ 201 / 506 or condition the classifier on the principal offence to lift the two still-weak classes.
 5. **Per-section pooling strategy.** Our chunked inference uses a single pool function (mean) across all classes. Per-class movement under max-pool versus mean-pool suggests §§ 498A / 147 prefer evidence-pooling-favouring max while §§ 201 / 376 prefer mean. A per-class pool could squeeze additional F1, at the cost of further dev overfitting.
 6. **§420 sentence selector.** Cheating cases need a selector tuned to transactional vocabulary (amounts, accounts, dates) rather than the offence keyword.
