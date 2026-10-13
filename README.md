@@ -58,7 +58,7 @@ Full per-fold breakdown in [`work/cv_5fold_results.json`](work/cv_5fold_results.
 
 ```
 work/
-  ├── sentence_split.py           legal-aware sentence splitter (60+ abbrevs)
+  ├── sentence_split.py           legal-aware sentence splitter (55 abbrevs)
   ├── prepare.py                  data preparation + 80/20 split
   ├── baselines.py                majority + BM25-NN baselines
   ├── train_classifier.py         InLegalBERT trainer (420-case train)
@@ -75,8 +75,18 @@ work/
   ├── eval_exact_fact.py          sentence-match scoring
   ├── cv_5fold.py                 5-fold cross-validation runner
   ├── cv_5fold_results.json       per-fold metrics + summary
+  ├── cv_5fold.log                CV run log (per-fold losses + summary)
+  ├── train_full.log              525-case training run log
+  ├── make_runs_summary.py        reduces the two submitted runs to counts only
+  ├── runs_comparison_summary.json  Run 1 vs Run 2 figures, no case text
   └── compare_submissions.py      v1 vs v2 vs v3 diff tool
 ```
+
+The submitted run files are **not** in this repository: their `fact`,
+`explanation` keys and `reasoning_traces` all contain verbatim FIRE test-set
+text. `runs_comparison_summary.json` carries the derived counts instead, so
+the Run 1 vs Run 2 comparison in the paper can be recomputed without the
+underlying data.
 
 The trained model weights (`work/model_bert/` and `work/model_bert_full/`, each ~420 MB) are **not** in this repository — retrain via the scripts below.
 

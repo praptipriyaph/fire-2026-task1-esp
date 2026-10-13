@@ -1,0 +1,810 @@
+{
+  "note": "Derived from the two submitted run files, which cannot be published because they embed verbatim FIRE test-set text. Counts and predicted labels only; no case text or identifiers. Cases are in submission-file order.",
+  "runs": {
+    "run1": "525-case model, CV-median thresholds, refined templates, two evidence sentences per section",
+    "run2": "ensemble of the 420-case and 525-case models, development-split thresholds, one sentence per section"
+  },
+  "summary": {
+    "n_cases": 57,
+    "identical_section_sets": 47,
+    "mean_sections_per_case": {
+      "run1": 1.4035,
+      "run2": 1.2982
+    },
+    "cases_predicting_302": {
+      "run1": 27,
+      "run2": 19
+    },
+    "mean_evidence_sentences_per_case": {
+      "run1": 2.7895,
+      "run2": 1.2982
+    },
+    "mean_trace_words_per_case": {
+      "run1": 188.5088,
+      "run2": 119.2456
+    }
+  },
+  "per_case": [
+    {
+      "case": "case_01",
+      "run1_sections": [
+        "IPC 302"
+      ],
+      "run2_sections": [
+        "IPC 302"
+      ],
+      "run1_evidence_sentences": 2,
+      "run2_evidence_sentences": 1,
+      "run1_trace_words": 152,
+      "run2_trace_words": 116
+    },
+    {
+      "case": "case_02",
+      "run1_sections": [
+        "IPC 147",
+        "IPC 302"
+      ],
+      "run2_sections": [
+        "IPC 147"
+      ],
+      "run1_evidence_sentences": 4,
+      "run2_evidence_sentences": 1,
+      "run1_trace_words": 213,
+      "run2_trace_words": 76
+    },
+    {
+      "case": "case_03",
+      "run1_sections": [
+        "IPC 147",
+        "IPC 302"
+      ],
+      "run2_sections": [
+        "IPC 147",
+        "IPC 302"
+      ],
+      "run1_evidence_sentences": 4,
+      "run2_evidence_sentences": 2,
+      "run1_trace_words": 247,
+      "run2_trace_words": 178
+    },
+    {
+      "case": "case_04",
+      "run1_sections": [
+        "IPC 147",
+        "IPC 302"
+      ],
+      "run2_sections": [
+        "IPC 147"
+      ],
+      "run1_evidence_sentences": 4,
+      "run2_evidence_sentences": 1,
+      "run1_trace_words": 248,
+      "run2_trace_words": 108
+    },
+    {
+      "case": "case_05",
+      "run1_sections": [
+        "IPC 147",
+        "IPC 302"
+      ],
+      "run2_sections": [
+        "IPC 147",
+        "IPC 302"
+      ],
+      "run1_evidence_sentences": 4,
+      "run2_evidence_sentences": 2,
+      "run1_trace_words": 169,
+      "run2_trace_words": 128
+    },
+    {
+      "case": "case_06",
+      "run1_sections": [
+        "IPC 147",
+        "IPC 302"
+      ],
+      "run2_sections": [
+        "IPC 147"
+      ],
+      "run1_evidence_sentences": 4,
+      "run2_evidence_sentences": 1,
+      "run1_trace_words": 217,
+      "run2_trace_words": 86
+    },
+    {
+      "case": "case_07",
+      "run1_sections": [
+        "IPC 147",
+        "IPC 302"
+      ],
+      "run2_sections": [
+        "IPC 147",
+        "IPC 302"
+      ],
+      "run1_evidence_sentences": 4,
+      "run2_evidence_sentences": 2,
+      "run1_trace_words": 259,
+      "run2_trace_words": 182
+    },
+    {
+      "case": "case_08",
+      "run1_sections": [
+        "IPC 147",
+        "IPC 506"
+      ],
+      "run2_sections": [
+        "IPC 147",
+        "IPC 506"
+      ],
+      "run1_evidence_sentences": 4,
+      "run2_evidence_sentences": 2,
+      "run1_trace_words": 271,
+      "run2_trace_words": 192
+    },
+    {
+      "case": "case_09",
+      "run1_sections": [
+        "IPC 302"
+      ],
+      "run2_sections": [
+        "IPC 302"
+      ],
+      "run1_evidence_sentences": 2,
+      "run2_evidence_sentences": 1,
+      "run1_trace_words": 118,
+      "run2_trace_words": 75
+    },
+    {
+      "case": "case_10",
+      "run1_sections": [
+        "IPC 302"
+      ],
+      "run2_sections": [
+        "IPC 302"
+      ],
+      "run1_evidence_sentences": 2,
+      "run2_evidence_sentences": 1,
+      "run1_trace_words": 100,
+      "run2_trace_words": 68
+    },
+    {
+      "case": "case_11",
+      "run1_sections": [
+        "IPC 302"
+      ],
+      "run2_sections": [
+        "IPC 498A"
+      ],
+      "run1_evidence_sentences": 2,
+      "run2_evidence_sentences": 1,
+      "run1_trace_words": 124,
+      "run2_trace_words": 93
+    },
+    {
+      "case": "case_12",
+      "run1_sections": [
+        "IPC 302"
+      ],
+      "run2_sections": [
+        "IPC 302"
+      ],
+      "run1_evidence_sentences": 2,
+      "run2_evidence_sentences": 1,
+      "run1_trace_words": 131,
+      "run2_trace_words": 55
+    },
+    {
+      "case": "case_13",
+      "run1_sections": [
+        "IPC 302"
+      ],
+      "run2_sections": [
+        "IPC 420"
+      ],
+      "run1_evidence_sentences": 2,
+      "run2_evidence_sentences": 1,
+      "run1_trace_words": 120,
+      "run2_trace_words": 76
+    },
+    {
+      "case": "case_14",
+      "run1_sections": [
+        "IPC 302"
+      ],
+      "run2_sections": [
+        "IPC 302"
+      ],
+      "run1_evidence_sentences": 2,
+      "run2_evidence_sentences": 1,
+      "run1_trace_words": 172,
+      "run2_trace_words": 103
+    },
+    {
+      "case": "case_15",
+      "run1_sections": [
+        "IPC 201",
+        "IPC 302"
+      ],
+      "run2_sections": [
+        "IPC 201",
+        "IPC 302"
+      ],
+      "run1_evidence_sentences": 4,
+      "run2_evidence_sentences": 2,
+      "run1_trace_words": 189,
+      "run2_trace_words": 147
+    },
+    {
+      "case": "case_16",
+      "run1_sections": [
+        "IPC 302"
+      ],
+      "run2_sections": [
+        "IPC 302"
+      ],
+      "run1_evidence_sentences": 2,
+      "run2_evidence_sentences": 1,
+      "run1_trace_words": 138,
+      "run2_trace_words": 58
+    },
+    {
+      "case": "case_17",
+      "run1_sections": [
+        "IPC 498A"
+      ],
+      "run2_sections": [
+        "IPC 498A"
+      ],
+      "run1_evidence_sentences": 2,
+      "run2_evidence_sentences": 1,
+      "run1_trace_words": 138,
+      "run2_trace_words": 77
+    },
+    {
+      "case": "case_18",
+      "run1_sections": [
+        "IPC 147",
+        "IPC 302"
+      ],
+      "run2_sections": [
+        "IPC 147",
+        "IPC 302"
+      ],
+      "run1_evidence_sentences": 4,
+      "run2_evidence_sentences": 2,
+      "run1_trace_words": 233,
+      "run2_trace_words": 161
+    },
+    {
+      "case": "case_19",
+      "run1_sections": [
+        "IPC 147",
+        "IPC 302"
+      ],
+      "run2_sections": [
+        "IPC 147"
+      ],
+      "run1_evidence_sentences": 4,
+      "run2_evidence_sentences": 1,
+      "run1_trace_words": 215,
+      "run2_trace_words": 88
+    },
+    {
+      "case": "case_20",
+      "run1_sections": [
+        "IPC 147",
+        "IPC 302"
+      ],
+      "run2_sections": [
+        "IPC 147"
+      ],
+      "run1_evidence_sentences": 4,
+      "run2_evidence_sentences": 1,
+      "run1_trace_words": 262,
+      "run2_trace_words": 90
+    },
+    {
+      "case": "case_21",
+      "run1_sections": [
+        "IPC 302"
+      ],
+      "run2_sections": [
+        "IPC 302"
+      ],
+      "run1_evidence_sentences": 2,
+      "run2_evidence_sentences": 1,
+      "run1_trace_words": 216,
+      "run2_trace_words": 88
+    },
+    {
+      "case": "case_22",
+      "run1_sections": [
+        "IPC 302"
+      ],
+      "run2_sections": [
+        "IPC 302"
+      ],
+      "run1_evidence_sentences": 2,
+      "run2_evidence_sentences": 1,
+      "run1_trace_words": 150,
+      "run2_trace_words": 114
+    },
+    {
+      "case": "case_23",
+      "run1_sections": [
+        "IPC 302"
+      ],
+      "run2_sections": [
+        "IPC 302"
+      ],
+      "run1_evidence_sentences": 2,
+      "run2_evidence_sentences": 1,
+      "run1_trace_words": 109,
+      "run2_trace_words": 52
+    },
+    {
+      "case": "case_24",
+      "run1_sections": [
+        "IPC 147",
+        "IPC 302"
+      ],
+      "run2_sections": [
+        "IPC 147",
+        "IPC 302"
+      ],
+      "run1_evidence_sentences": 4,
+      "run2_evidence_sentences": 2,
+      "run1_trace_words": 189,
+      "run2_trace_words": 144
+    },
+    {
+      "case": "case_25",
+      "run1_sections": [
+        "IPC 147",
+        "IPC 302"
+      ],
+      "run2_sections": [
+        "IPC 147",
+        "IPC 302"
+      ],
+      "run1_evidence_sentences": 4,
+      "run2_evidence_sentences": 2,
+      "run1_trace_words": 229,
+      "run2_trace_words": 157
+    },
+    {
+      "case": "case_26",
+      "run1_sections": [
+        "IPC 376"
+      ],
+      "run2_sections": [
+        "IPC 376"
+      ],
+      "run1_evidence_sentences": 2,
+      "run2_evidence_sentences": 1,
+      "run1_trace_words": 146,
+      "run2_trace_words": 88
+    },
+    {
+      "case": "case_27",
+      "run1_sections": [
+        "IPC 376"
+      ],
+      "run2_sections": [
+        "IPC 376"
+      ],
+      "run1_evidence_sentences": 2,
+      "run2_evidence_sentences": 1,
+      "run1_trace_words": 113,
+      "run2_trace_words": 79
+    },
+    {
+      "case": "case_28",
+      "run1_sections": [
+        "IPC 376"
+      ],
+      "run2_sections": [
+        "IPC 376"
+      ],
+      "run1_evidence_sentences": 2,
+      "run2_evidence_sentences": 1,
+      "run1_trace_words": 165,
+      "run2_trace_words": 131
+    },
+    {
+      "case": "case_29",
+      "run1_sections": [
+        "IPC 376"
+      ],
+      "run2_sections": [
+        "IPC 376"
+      ],
+      "run1_evidence_sentences": 2,
+      "run2_evidence_sentences": 1,
+      "run1_trace_words": 129,
+      "run2_trace_words": 66
+    },
+    {
+      "case": "case_30",
+      "run1_sections": [
+        "IPC 376"
+      ],
+      "run2_sections": [
+        "IPC 376"
+      ],
+      "run1_evidence_sentences": 2,
+      "run2_evidence_sentences": 1,
+      "run1_trace_words": 161,
+      "run2_trace_words": 76
+    },
+    {
+      "case": "case_31",
+      "run1_sections": [
+        "IPC 376"
+      ],
+      "run2_sections": [
+        "IPC 376"
+      ],
+      "run1_evidence_sentences": 2,
+      "run2_evidence_sentences": 1,
+      "run1_trace_words": 124,
+      "run2_trace_words": 63
+    },
+    {
+      "case": "case_32",
+      "run1_sections": [
+        "IPC 376"
+      ],
+      "run2_sections": [
+        "IPC 376"
+      ],
+      "run1_evidence_sentences": 2,
+      "run2_evidence_sentences": 1,
+      "run1_trace_words": 117,
+      "run2_trace_words": 71
+    },
+    {
+      "case": "case_33",
+      "run1_sections": [
+        "IPC 420"
+      ],
+      "run2_sections": [
+        "IPC 420"
+      ],
+      "run1_evidence_sentences": 2,
+      "run2_evidence_sentences": 1,
+      "run1_trace_words": 99,
+      "run2_trace_words": 81
+    },
+    {
+      "case": "case_34",
+      "run1_sections": [
+        "IPC 420"
+      ],
+      "run2_sections": [
+        "IPC 420"
+      ],
+      "run1_evidence_sentences": 2,
+      "run2_evidence_sentences": 1,
+      "run1_trace_words": 191,
+      "run2_trace_words": 99
+    },
+    {
+      "case": "case_35",
+      "run1_sections": [
+        "IPC 420"
+      ],
+      "run2_sections": [
+        "IPC 420"
+      ],
+      "run1_evidence_sentences": 2,
+      "run2_evidence_sentences": 1,
+      "run1_trace_words": 216,
+      "run2_trace_words": 124
+    },
+    {
+      "case": "case_36",
+      "run1_sections": [
+        "IPC 420"
+      ],
+      "run2_sections": [
+        "IPC 420"
+      ],
+      "run1_evidence_sentences": 2,
+      "run2_evidence_sentences": 1,
+      "run1_trace_words": 138,
+      "run2_trace_words": 97
+    },
+    {
+      "case": "case_37",
+      "run1_sections": [
+        "IPC 420"
+      ],
+      "run2_sections": [
+        "IPC 420"
+      ],
+      "run1_evidence_sentences": 2,
+      "run2_evidence_sentences": 1,
+      "run1_trace_words": 189,
+      "run2_trace_words": 104
+    },
+    {
+      "case": "case_38",
+      "run1_sections": [
+        "IPC 420"
+      ],
+      "run2_sections": [
+        "IPC 420"
+      ],
+      "run1_evidence_sentences": 2,
+      "run2_evidence_sentences": 1,
+      "run1_trace_words": 144,
+      "run2_trace_words": 81
+    },
+    {
+      "case": "case_39",
+      "run1_sections": [
+        "IPC 420"
+      ],
+      "run2_sections": [
+        "IPC 420"
+      ],
+      "run1_evidence_sentences": 2,
+      "run2_evidence_sentences": 1,
+      "run1_trace_words": 129,
+      "run2_trace_words": 97
+    },
+    {
+      "case": "case_40",
+      "run1_sections": [
+        "IPC 420"
+      ],
+      "run2_sections": [
+        "IPC 420"
+      ],
+      "run1_evidence_sentences": 2,
+      "run2_evidence_sentences": 1,
+      "run1_trace_words": 132,
+      "run2_trace_words": 102
+    },
+    {
+      "case": "case_41",
+      "run1_sections": [
+        "IPC 420"
+      ],
+      "run2_sections": [
+        "IPC 420"
+      ],
+      "run1_evidence_sentences": 2,
+      "run2_evidence_sentences": 1,
+      "run1_trace_words": 192,
+      "run2_trace_words": 154
+    },
+    {
+      "case": "case_42",
+      "run1_sections": [
+        "IPC 498A"
+      ],
+      "run2_sections": [
+        "IPC 498A"
+      ],
+      "run1_evidence_sentences": 2,
+      "run2_evidence_sentences": 1,
+      "run1_trace_words": 152,
+      "run2_trace_words": 79
+    },
+    {
+      "case": "case_43",
+      "run1_sections": [
+        "IPC 498A"
+      ],
+      "run2_sections": [
+        "IPC 498A"
+      ],
+      "run1_evidence_sentences": 2,
+      "run2_evidence_sentences": 1,
+      "run1_trace_words": 137,
+      "run2_trace_words": 92
+    },
+    {
+      "case": "case_44",
+      "run1_sections": [
+        "IPC 302"
+      ],
+      "run2_sections": [
+        "IPC 302"
+      ],
+      "run1_evidence_sentences": 2,
+      "run2_evidence_sentences": 1,
+      "run1_trace_words": 115,
+      "run2_trace_words": 99
+    },
+    {
+      "case": "case_45",
+      "run1_sections": [
+        "IPC 498A"
+      ],
+      "run2_sections": [
+        "IPC 498A"
+      ],
+      "run1_evidence_sentences": 2,
+      "run2_evidence_sentences": 1,
+      "run1_trace_words": 135,
+      "run2_trace_words": 92
+    },
+    {
+      "case": "case_46",
+      "run1_sections": [
+        "IPC 498A"
+      ],
+      "run2_sections": [
+        "IPC 498A"
+      ],
+      "run1_evidence_sentences": 2,
+      "run2_evidence_sentences": 1,
+      "run1_trace_words": 158,
+      "run2_trace_words": 106
+    },
+    {
+      "case": "case_47",
+      "run1_sections": [
+        "IPC 498A"
+      ],
+      "run2_sections": [
+        "IPC 498A"
+      ],
+      "run1_evidence_sentences": 2,
+      "run2_evidence_sentences": 1,
+      "run1_trace_words": 135,
+      "run2_trace_words": 100
+    },
+    {
+      "case": "case_48",
+      "run1_sections": [
+        "IPC 498A"
+      ],
+      "run2_sections": [
+        "IPC 498A"
+      ],
+      "run1_evidence_sentences": 2,
+      "run2_evidence_sentences": 1,
+      "run1_trace_words": 185,
+      "run2_trace_words": 126
+    },
+    {
+      "case": "case_49",
+      "run1_sections": [
+        "IPC 498A"
+      ],
+      "run2_sections": [
+        "IPC 498A"
+      ],
+      "run1_evidence_sentences": 2,
+      "run2_evidence_sentences": 1,
+      "run1_trace_words": 148,
+      "run2_trace_words": 86
+    },
+    {
+      "case": "case_50",
+      "run1_sections": [
+        "IPC 420"
+      ],
+      "run2_sections": [
+        "IPC 420",
+        "IPC 506"
+      ],
+      "run1_evidence_sentences": 2,
+      "run2_evidence_sentences": 2,
+      "run1_trace_words": 148,
+      "run2_trace_words": 260
+    },
+    {
+      "case": "case_51",
+      "run1_sections": [
+        "IPC 147",
+        "IPC 420",
+        "IPC 506"
+      ],
+      "run2_sections": [
+        "IPC 147",
+        "IPC 420",
+        "IPC 506"
+      ],
+      "run1_evidence_sentences": 6,
+      "run2_evidence_sentences": 3,
+      "run1_trace_words": 508,
+      "run2_trace_words": 339
+    },
+    {
+      "case": "case_52",
+      "run1_sections": [
+        "IPC 420",
+        "IPC 506"
+      ],
+      "run2_sections": [
+        "IPC 420",
+        "IPC 506"
+      ],
+      "run1_evidence_sentences": 4,
+      "run2_evidence_sentences": 2,
+      "run1_trace_words": 296,
+      "run2_trace_words": 214
+    },
+    {
+      "case": "case_53",
+      "run1_sections": [
+        "IPC 498A",
+        "IPC 506"
+      ],
+      "run2_sections": [
+        "IPC 498A",
+        "IPC 506"
+      ],
+      "run1_evidence_sentences": 4,
+      "run2_evidence_sentences": 2,
+      "run1_trace_words": 225,
+      "run2_trace_words": 143
+    },
+    {
+      "case": "case_54",
+      "run1_sections": [
+        "IPC 201",
+        "IPC 302"
+      ],
+      "run2_sections": [
+        "IPC 506"
+      ],
+      "run1_evidence_sentences": 4,
+      "run2_evidence_sentences": 1,
+      "run1_trace_words": 288,
+      "run2_trace_words": 72
+    },
+    {
+      "case": "case_55",
+      "run1_sections": [
+        "IPC 420",
+        "IPC 506"
+      ],
+      "run2_sections": [
+        "IPC 420",
+        "IPC 506"
+      ],
+      "run1_evidence_sentences": 4,
+      "run2_evidence_sentences": 2,
+      "run1_trace_words": 488,
+      "run2_trace_words": 389
+    },
+    {
+      "case": "case_56",
+      "run1_sections": [
+        "IPC 147",
+        "IPC 302",
+        "IPC 506"
+      ],
+      "run2_sections": [
+        "IPC 147",
+        "IPC 302",
+        "IPC 506"
+      ],
+      "run1_evidence_sentences": 6,
+      "run2_evidence_sentences": 3,
+      "run1_trace_words": 280,
+      "run2_trace_words": 202
+    },
+    {
+      "case": "case_57",
+      "run1_sections": [
+        "IPC 147",
+        "IPC 302",
+        "IPC 506"
+      ],
+      "run2_sections": [
+        "IPC 302",
+        "IPC 506"
+      ],
+      "run1_evidence_sentences": 5,
+      "run2_evidence_sentences": 2,
+      "run1_trace_words": 353,
+      "run2_trace_words": 173
+    }
+  ]
+}
