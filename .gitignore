@@ -23,6 +23,10 @@ __pycache__/
 # -------- logs & scratch --------
 *.log
 work/*.log
+# Keep the two run logs that evidence the reported training losses and CV
+# summary. Both contain only metrics and library output, no case data.
+!work/train_full.log
+!work/cv_5fold.log
 scratch/
 tmp/
 

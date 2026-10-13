@@ -1,0 +1,185 @@
+device: mps  K=5  epochs=10  seed=42  pool=mean
+total cases: 525  (train=420 + dev=105)
+frozen thresholds: {'147': 0.3499999940395355, '201': 0.20000000298023224, '302': 0.5, '376': 0.5, '420': 0.10000000149011612, '498A': 0.15000000596046448, '506': 0.20000000298023224}
+fold sizes: [105, 105, 105, 105, 105] (sum=525)
+
+=== fold 1/5 ===
+  train: 420  eval: 105
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 51062.43it/s]
+[transformers] [1mBertForSequenceClassification LOAD REPORT[0m from: law-ai/InLegalBERT
+Key                                        | Status     | 
+-------------------------------------------+------------+-
+cls.predictions.bias                       | UNEXPECTED | 
+cls.seq_relationship.weight                | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.weight | UNEXPECTED | 
+cls.predictions.decoder.bias               | UNEXPECTED | 
+cls.predictions.transform.dense.bias       | UNEXPECTED | 
+cls.seq_relationship.bias                  | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.bias   | UNEXPECTED | 
+cls.predictions.transform.dense.weight     | UNEXPECTED | 
+cls.predictions.decoder.weight             | UNEXPECTED | 
+classifier.weight                          | MISSING    | 
+classifier.bias                            | MISSING    | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+      epoch  1  loss=0.5130
+      epoch  2  loss=0.4008
+      epoch  3  loss=0.3166
+      epoch  4  loss=0.2522
+      epoch  5  loss=0.2079
+      epoch  6  loss=0.1698
+      epoch  7  loss=0.1446
+      epoch  8  loss=0.1159
+      epoch  9  loss=0.0911
+      epoch 10  loss=0.0730
+[transformers] Token indices sequence length is longer than the specified maximum sequence length for this model (1018 > 512). Running this sequence through the model will result in indexing errors
+  F1@0.5=0.6898  F1@frozen=0.6930  F1@tuned=0.7759  R@3=0.9619
+
+=== fold 2/5 ===
+  train: 420  eval: 105
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 37956.64it/s]
+[transformers] [1mBertForSequenceClassification LOAD REPORT[0m from: law-ai/InLegalBERT
+Key                                        | Status     | 
+-------------------------------------------+------------+-
+cls.predictions.bias                       | UNEXPECTED | 
+cls.seq_relationship.weight                | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.weight | UNEXPECTED | 
+cls.predictions.decoder.bias               | UNEXPECTED | 
+cls.predictions.transform.dense.bias       | UNEXPECTED | 
+cls.seq_relationship.bias                  | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.bias   | UNEXPECTED | 
+cls.predictions.transform.dense.weight     | UNEXPECTED | 
+cls.predictions.decoder.weight             | UNEXPECTED | 
+classifier.weight                          | MISSING    | 
+classifier.bias                            | MISSING    | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+      epoch  1  loss=0.5228
+      epoch  2  loss=0.3964
+      epoch  3  loss=0.3168
+      epoch  4  loss=0.2613
+      epoch  5  loss=0.2197
+      epoch  6  loss=0.1823
+      epoch  7  loss=0.1498
+      epoch  8  loss=0.1231
+      epoch  9  loss=0.1052
+      epoch 10  loss=0.0837
+[transformers] Token indices sequence length is longer than the specified maximum sequence length for this model (676 > 512). Running this sequence through the model will result in indexing errors
+  F1@0.5=0.5778  F1@frozen=0.7059  F1@tuned=0.7733  R@3=0.9667
+
+=== fold 3/5 ===
+  train: 420  eval: 105
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 62780.48it/s]
+[transformers] [1mBertForSequenceClassification LOAD REPORT[0m from: law-ai/InLegalBERT
+Key                                        | Status     | 
+-------------------------------------------+------------+-
+cls.predictions.bias                       | UNEXPECTED | 
+cls.seq_relationship.weight                | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.weight | UNEXPECTED | 
+cls.predictions.decoder.bias               | UNEXPECTED | 
+cls.predictions.transform.dense.bias       | UNEXPECTED | 
+cls.seq_relationship.bias                  | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.bias   | UNEXPECTED | 
+cls.predictions.transform.dense.weight     | UNEXPECTED | 
+cls.predictions.decoder.weight             | UNEXPECTED | 
+classifier.weight                          | MISSING    | 
+classifier.bias                            | MISSING    | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+      epoch  1  loss=0.5264
+      epoch  2  loss=0.4012
+      epoch  3  loss=0.3252
+      epoch  4  loss=0.2649
+      epoch  5  loss=0.2220
+      epoch  6  loss=0.1870
+      epoch  7  loss=0.1553
+      epoch  8  loss=0.1294
+      epoch  9  loss=0.1038
+      epoch 10  loss=0.0867
+[transformers] Token indices sequence length is longer than the specified maximum sequence length for this model (546 > 512). Running this sequence through the model will result in indexing errors
+  F1@0.5=0.6588  F1@frozen=0.7668  F1@tuned=0.8130  R@3=0.9762
+
+=== fold 4/5 ===
+  train: 420  eval: 105
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 22600.70it/s]
+[transformers] [1mBertForSequenceClassification LOAD REPORT[0m from: law-ai/InLegalBERT
+Key                                        | Status     | 
+-------------------------------------------+------------+-
+cls.predictions.bias                       | UNEXPECTED | 
+cls.seq_relationship.weight                | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.weight | UNEXPECTED | 
+cls.predictions.decoder.bias               | UNEXPECTED | 
+cls.predictions.transform.dense.bias       | UNEXPECTED | 
+cls.seq_relationship.bias                  | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.bias   | UNEXPECTED | 
+cls.predictions.transform.dense.weight     | UNEXPECTED | 
+cls.predictions.decoder.weight             | UNEXPECTED | 
+classifier.weight                          | MISSING    | 
+classifier.bias                            | MISSING    | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+      epoch  1  loss=0.4980
+      epoch  2  loss=0.3923
+      epoch  3  loss=0.3211
+      epoch  4  loss=0.2657
+      epoch  5  loss=0.2198
+      epoch  6  loss=0.1864
+      epoch  7  loss=0.1552
+      epoch  8  loss=0.1339
+      epoch  9  loss=0.1128
+      epoch 10  loss=0.0908
+[transformers] Token indices sequence length is longer than the specified maximum sequence length for this model (627 > 512). Running this sequence through the model will result in indexing errors
+  F1@0.5=0.6541  F1@frozen=0.7370  F1@tuned=0.7851  R@3=0.9810
+
+=== fold 5/5 ===
+  train: 420  eval: 105
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 43148.60it/s]
+[transformers] [1mBertForSequenceClassification LOAD REPORT[0m from: law-ai/InLegalBERT
+Key                                        | Status     | 
+-------------------------------------------+------------+-
+cls.predictions.bias                       | UNEXPECTED | 
+cls.seq_relationship.weight                | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.weight | UNEXPECTED | 
+cls.predictions.decoder.bias               | UNEXPECTED | 
+cls.predictions.transform.dense.bias       | UNEXPECTED | 
+cls.seq_relationship.bias                  | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.bias   | UNEXPECTED | 
+cls.predictions.transform.dense.weight     | UNEXPECTED | 
+cls.predictions.decoder.weight             | UNEXPECTED | 
+classifier.weight                          | MISSING    | 
+classifier.bias                            | MISSING    | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+      epoch  1  loss=0.5218
+      epoch  2  loss=0.4077
+      epoch  3  loss=0.3405
+      epoch  4  loss=0.2726
+      epoch  5  loss=0.2280
+      epoch  6  loss=0.1855
+      epoch  7  loss=0.1544
+      epoch  8  loss=0.1220
+      epoch  9  loss=0.0955
+      epoch 10  loss=0.0778
+[transformers] Token indices sequence length is longer than the specified maximum sequence length for this model (1521 > 512). Running this sequence through the model will result in indexing errors
+  F1@0.5=0.6017  F1@frozen=0.7157  F1@tuned=0.7571  R@3=0.9635
+
+============================================================
+5-FOLD CV SUMMARY
+============================================================
+  macro_f1_at_05            0.6364 ± 0.0456   (min=0.5778, max=0.6898)
+  macro_f1_at_frozen        0.7237 ± 0.0290   (min=0.6930, max=0.7668)
+  macro_f1_at_tuned         0.7809 ± 0.0206   (min=0.7571, max=0.8130)
+  recall_at_3               0.9698 ± 0.0083   (min=0.9619, max=0.9810)
+
+full results: /Users/nomitachetia/Desktop/rp/Task 1/work/cv_5fold_results.json
