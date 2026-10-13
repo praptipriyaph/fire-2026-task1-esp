@@ -30,12 +30,14 @@ work/*.log
 scratch/
 tmp/
 
-# -------- editor / os --------
+# -------- editor / os / local tooling --------
 .DS_Store
 .idea/
 .vscode/
 *.swp
 *.swo
+# Local agent tooling (vendored third-party skills); not a paper artifact.
+.claude/
 
 # -------- notebooks with outputs --------
 *.ipynb_checkpoints/
